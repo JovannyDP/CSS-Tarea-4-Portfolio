@@ -1,0 +1,201 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 25px;
+    background-image: url('../../img/elipse.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 200px auto;
+
+    @include breakpoint(tablet) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        margin-bottom: 45px;
+    }
+
+    @include breakpoint(desktop) {
+        padding: 0 100px;
+        margin-bottom: 250px;
+        background-size: 300px auto;
+    }
+        
+    &__img {
+            width: 174px;
+            position: relative;
+            height: 250px;
+            margin-bottom: 50px;
+
+            @include breakpoint(tablet) {
+                width: 500px;      
+            }
+
+            @include breakpoint(desktop) {
+                width: 800px;      
+            }
+
+            &__under {             
+                z-index: -1;
+                position: absolute;
+                height: 383px;
+                top: -110px; 
+                opacity: 0.1; 
+                
+                @include breakpoint(tablet) {
+                    width: 300px;      
+                }
+
+                @include breakpoint(desktop) {
+                    width: 500px;      
+                }
+            }
+
+            &__over {
+                width: 174px;
+                height: auto;
+                position: absolute;
+                z-index: 2;                
+                top: 30px;
+                left: 0;
+
+                @include breakpoint(tablet) {
+                width: 300px;      
+                }
+
+                @include breakpoint(desktop) {
+                    width: 500px;      
+                }
+            }
+        }
+
+    &__text {
+            margin-left: 40px;
+            margin-right: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+
+            @include breakpoint(tablet) {
+                text-align: left;
+                margin-right: 0;
+                align-items: flex-start;
+            }
+
+            @include breakpoint(desktop) {
+                padding-left: 60px;
+                padding-top: 100px;
+            }
+
+            .break {
+                display: none;
+
+                @include breakpoint(tablet) {
+                    display: inline;
+                    
+                }
+
+                @include breakpoint(desktop) {
+                    display: none;
+                }
+            }
+                
+            h1 {
+                position: relative;
+                margin-bottom: 20px;
+                font-size: 40px;
+                font-weight: bold;
+                line-height: 40px;
+
+                @include breakpoint(tablet) {
+                    font-size: 67px;
+                    line-height: 72px;
+                    margin-bottom: 60px;
+                }
+
+                @include breakpoint(desktop) {
+                    font-size: 88px;
+                    line-height: 88px;
+                    width: 70%;
+                }
+
+                    span::after {
+                        content: '';
+                        display: block;
+                        width: 63%;
+                        height: 3px;
+                        background-color: $green;
+                        position: absolute;
+                        bottom: 0px;
+                        right: 40px;
+
+                        @include breakpoint(tablet) {
+                            width: 90%;
+                            height: 5px;
+                            bottom: -4px;
+                        }
+
+                        @include breakpoint(desktop) {
+                            width: 68%;
+                            right: 100px;
+                        }
+                    }
+            }
+
+            p {
+                font-size: 15px;
+                font-weight: 300;
+                width: 90%;
+                margin-bottom: 20px;
+
+                @include breakpoint(tablet) {
+                    font-size: 18px;
+                    margin-bottom: 40px;
+                }
+
+                @include breakpoint(desktop) {
+                    width: 40%;
+                }
+            }
+
+            .btn {
+                all: unset;
+                cursor: pointer; 
+                font-family: $primary-font;
+                font-size: 16px;
+                color: $white;
+                
+                span::after {
+                        content: '';
+                        display: block;
+                        width: 25%;
+                        height: 2px;
+                        background-color: $green;
+                        position: absolute;
+                        bottom: 10px;
+                        right: 37%;
+
+                        @include breakpoint(tablet) {
+                            left: 40px;
+                            width: 12%;
+                        }
+
+                        @include breakpoint(desktop) {
+                            left: 200px;
+                            width: 5%;
+                        }
+                }
+
+                :hover {
+                    color: $green;
+                }
+                
+            }
+
+            
+    }
+}

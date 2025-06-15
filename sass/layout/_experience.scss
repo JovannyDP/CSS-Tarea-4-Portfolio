@@ -1,0 +1,65 @@
+.experience {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    gap: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    background-image: url('../../img/elipse2.svg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 120px auto;
+
+    @include breakpoint(tablet) {
+        text-align: left;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        justify-items: center;
+        background-size: 180px auto;
+        margin-bottom: 60px;
+
+        &__line {
+            grid-column: 1 / -1; 
+            margin: 20px 0;
+        }
+
+        &__line:last-child {
+            display: none;
+        }
+    }
+
+    @include breakpoint(desktop) {
+        padding: 0 130px;
+        grid-template-columns: repeat(3, 1fr);
+        background-size: 250px auto;
+        margin-bottom: 150px;
+
+        &__line {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__item {
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+
+            @include breakpoint(tablet) {
+                font-size: 48px;
+            }
+        }
+
+        p {
+            font-size: 12px;
+            font-weight: 300;
+
+            @include breakpoint(tablet) {
+                font-size: 18px;
+            }
+        }
+    } 
+}

@@ -1,0 +1,251 @@
+.footer {
+    background-color: $grey;
+    padding: 20px;
+    padding-bottom: 40px;
+    width: 100%;
+
+    background-image: url('../../img/elipse.svg');
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 200px auto;
+
+    @include breakpoint(desktop) {
+        padding: 0 130px;
+        padding-bottom: 80px;
+        background-size: 700px 200px;
+    }
+
+
+    &__contact {
+        @include breakpoint(desktop) {
+            display: flex;
+            flex-direction: row;
+            padding-top: 50px;
+        }
+    }
+
+    &__text {
+        text-align: center;
+
+        @include breakpoint(tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include breakpoint(desktop) {
+            text-align: left;
+            align-items: flex-start;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+
+            @include breakpoint(tablet) {
+                font-size: 72px;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 40px;
+
+            @include breakpoint(tablet) {
+                font-size: 18px;
+                width: 60%;
+            }
+
+            @include breakpoint(desktop) {
+                text-align: left;
+                width: 52%;
+            }
+        }
+    }
+
+    &__form {
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-family: $primary-font;
+            font-size: 16px;
+            margin-bottom: 60px;
+            padding: 10px;
+
+            @include breakpoint(tablet) {
+                padding: 0 150px;
+            }
+
+            @include breakpoint(desktop) {
+                gap: 5px;
+                margin-bottom: 10px;
+                padding-right: 100px;
+            }
+
+            input,
+            textarea {
+                all: unset;
+                font-family: inherit;
+                font-size: inherit;
+                padding: 12px;
+                border-bottom: 2px solid $grey-light;
+                background-color: transparent;
+                color: $white;
+                width: 90%;
+                //transition: border-color 0.3s ease;
+
+                @include breakpoint(tablet) {
+                    width: 100%;
+                    padding: 20px;
+                }
+
+                @include breakpoint(desktop) {
+                    padding: 40px;
+                }
+
+                &::placeholder {
+                color: $grey-light;
+                opacity: 0.7;
+                }
+                    
+                &:focus {
+                    border-bottom-color: $white;
+                }
+
+                &:valid {
+                    border-bottom-color: $green;
+                }
+
+                &:invalid {
+                    border-bottom-color: red;
+                }
+            }
+
+           
+            .btn {
+                all: unset;
+                cursor: pointer; 
+                font-family: $primary-font;
+                font-size: 16px;
+                font-weight: bold;
+                color: $white;
+                position: relative;
+                margin-bottom: 80px;
+                text-align: end;
+                //display: flex;
+                //justify-content: flex-end;
+
+                @include breakpoint(tablet) {
+                    width: 110%;
+                    margin-top: 30px;
+                }
+
+                span::after {
+                        content: '';
+                        display: block;
+                        width: 35%;
+                        height: 2px;
+                        background-color: $green;
+                        position: absolute;
+                        bottom: -10px;
+                        right: 0;
+
+                        @include breakpoint(tablet) {
+                            width: 25%;
+                        }
+
+                        @include breakpoint(desktop) {
+                            width: 19%;
+                        }
+                }
+
+                :hover {
+                    color: $green;
+                }
+            }
+        }
+    }
+
+    .experience__line {
+            display: none;
+
+            @include breakpoint(tablet) {
+                display: block;
+                padding-bottom: 40px;
+            }
+    }
+
+    &__social {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoint(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            //padding: 0 150px;
+        }
+        
+        
+
+        &__logo {
+            width: 129px;
+            margin-bottom: 15px;
+
+            @include breakpoint(tablet) {
+                width: 202px;
+            }
+        }
+
+        &__icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;            
+            
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                width: 100%;
+                list-style: none;
+
+                @include breakpoint(tablet) {
+                    justify-content: flex-end;
+                }
+            
+                li {
+                    @include reset-list();
+                    width: auto;
+        
+                    a {
+
+                        .icon {
+                            width: 18px;
+                            height: 18px;
+                            fill: $white;
+
+                            @include breakpoint(tablet) {
+                                width: 24px;
+                                height: 24px;
+
+                            }
+
+                            :hover {
+                                fill: $green;
+                            }
+                        }
+                    }  
+                }    
+            }
+                        
+        }
+    }
+}
+
+
